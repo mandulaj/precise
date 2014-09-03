@@ -27,7 +27,7 @@ func TestAdd(t *testing.T) {
         t.Errorf("expected uncertainty 0.3, got %f", f.uncertainty)
     }
     if f.sigFig != 3 {
-        t.Errorf("expected sigFig to be 3, gor %d", f.sigFig)
+        t.Errorf("expected sigFig to be 3, got %d", f.sigFig)
     }
 }
 
@@ -45,7 +45,7 @@ func TestSub(t *testing.T) {
         t.Errorf("expected uncertainty 0.3, got %f", f.uncertainty)
     }
     if f.sigFig != 3 {
-        t.Errorf("expected sigFig to be 3, gor %d", f.sigFig)
+        t.Errorf("expected sigFig to be 3, got %d", f.sigFig)
     }
 
 }
@@ -64,7 +64,7 @@ func TestMul(t *testing.T) {
         t.Errorf("expected uncertainty 0.3, got %f", f.uncertainty)
     }
     if f.sigFig != 3 {
-        t.Errorf("expected sigFig to be 3, gor %d", f.sigFig)
+        t.Errorf("expected sigFig to be 3, got %d", f.sigFig)
     }
 
 }
@@ -83,7 +83,7 @@ func TestDiv(t *testing.T) {
         t.Errorf("expected uncertainty 0.3, got %f", f.uncertainty)
     }
     if f.sigFig != 3 {
-        t.Errorf("expected sigFig to be 3, gor %d", f.sigFig)
+        t.Errorf("expected sigFig to be 3, got %d", f.sigFig)
     }
 
 }
