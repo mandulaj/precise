@@ -7,11 +7,21 @@ small go library for working with uncertainty arithmetic
 ```bash
   $ go get github.com/zpiman/precise
 ```
-  
+###Documentation
+Check the [wiki](https://github.com/zpiman/precise/wiki/Doc)!
+
 ###Changelog
+###### v0.1
+  * Implement basic arithmetic
+  * Add tests
 
 ###Todo
-* Everything
+* add scalar operations
+* add number convertors
+* create an interface
+* add average function (sigFig will increase)
+* add other statistics functions
+* **Any other ideas???** 
 
 ###Contribution
 
