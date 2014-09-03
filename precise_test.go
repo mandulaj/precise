@@ -60,7 +60,7 @@ func TestMul(t *testing.T) {
     if f.value != 267.75 {
         t.Errorf("expected value 267.75, got %f", f.value)
     }
-    if f.uncertainty != 0.3 {
+    if !closeTo(f.uncertainty, 0.3) {
         t.Errorf("expected uncertainty 0.3, got %f", f.uncertainty)
     }
     if f.sigFig != 3 {
@@ -79,7 +79,7 @@ func TestDiv(t *testing.T) {
     if f.value != 36.0 {
         t.Errorf("expected value 36.0, got %f", f.value)
     }
-    if f.uncertainty != 0.3 {
+    if !closeTo(f.uncertainty, 0.3) {
         t.Errorf("expected uncertainty 0.3, got %f", f.uncertainty)
     }
     if f.sigFig != 3 {
