@@ -13,7 +13,7 @@ func NewFloatU(value, uncertainty float64, sigFig uint) (f* FloatU) {
     return &FloatU{value, uncertainty, sigFig}
 }
 
-func (f* FloatU) Add(u FloatU) {
+func (f* FloatU) Add(u* FloatU)  {
     f.value += u.value
     f.uncertainty += u.uncertainty
 
@@ -22,7 +22,7 @@ func (f* FloatU) Add(u FloatU) {
     }
 }
 
-func (f* FloatU) Sub(u FloatU) {
+func (f* FloatU) Sub(u* FloatU) {
     f.value -= u.value
     f.uncertainty += u.uncertainty
 
@@ -32,7 +32,7 @@ func (f* FloatU) Sub(u FloatU) {
 }
 
 
-func (f* FloatU) Mul(u FloatU) {
+func (f* FloatU) Mul(u* FloatU) {
     fRelUncertainty := f.Relative()
     fRelUncertainty += u.Relative()
 
@@ -44,7 +44,7 @@ func (f* FloatU) Mul(u FloatU) {
     }
 }
 
-func (f* FloatU) Div(u FloatU) {
+func (f* FloatU) Div(u* FloatU) {
     fRelUncertainty := f.Relative()
     fRelUncertainty += u.Relative()
 
