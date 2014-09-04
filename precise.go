@@ -86,6 +86,19 @@ func (f *FloatU)Pow(p int) {
     }
 }
 
+func (f *FloatU)AddS(u float64) {
+    f.value += u
+}
+func (f *FloatU)SubS(u float64) {
+    f.value -= u
+}
+func (f *FloatU)MulS(u float64) {
+    f.value *= u
+}
+func (f *FloatU)DivS(u float64) {
+    f.value /= u
+}
+
 // FloatU implements the Stringer interface so variables of type FloatU can be used in fmt.Print()
 func (f FloatU) String() string {
     format := fmt.Sprintf("%%.%df +-%%.%df",f.sigFig, f.sigFig)
@@ -95,4 +108,51 @@ func (f FloatU) String() string {
 // What is the relative uncertainty of f
 func (f FloatU) Relative() float64 {
     return f.uncertainty/f.value
+}
+
+// Compare f to u within the limmits of both uncertainties 
+func (f *FloatU) Eql(u *FloatU) bool {
+
+}
+
+func (f *FloatU) Lt(u *FloatU) bool {
+
+}
+
+func (f *FloatU) Gt(u *FloatU) bool {
+
+}
+
+func (f *FloatU) LtE(u *FloatU) bool {
+
+}
+
+func (f *FloatU) GtE(u *FloatU) bool {
+
+}
+
+// Compare f to a Scalar within the limmits of uncertainty
+func (f *FloatU) EqlS(u float64) bool {
+
+}
+
+func (f *FloatU) GtS(u float64) bool {
+
+}
+
+func (f *FloatU) LtS(u float64) bool {
+
+}
+
+func (f *FloatU) GtES(u float64) bool {
+
+}
+
+func (f *FloatU) LtES(u float64) bool {
+
+}
+
+// Round value to i sigFig
+func (f FloatU)roundSigFig(i) float64{
+
 }
