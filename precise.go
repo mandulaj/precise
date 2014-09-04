@@ -86,6 +86,7 @@ func (f *FloatU)Pow(p int) {
     }
 }
 
+// Interface for scalars
 func (f *FloatU)AddS(u float64) {
     f.value += u
 }
@@ -111,48 +112,70 @@ func (f FloatU) Relative() float64 {
 }
 
 // Compare f to u within the limmits of both uncertainties 
+
+// f == u
 func (f *FloatU) Eql(u *FloatU) bool {
-
+    if  (f.value + f.uncertainty) >= (u.value - u.uncertainty) &&
+        (f.value - f.uncertainty) <= (u.value + u.uncertainty) {
+        return true
+    } else {
+        return false
+    }
 }
 
+// f < u
 func (f *FloatU) Lt(u *FloatU) bool {
-
+    return f.value + f.uncertainty < u.value - u.uncertainty
 }
 
+// f > u
 func (f *FloatU) Gt(u *FloatU) bool {
-
+    return f.value - f.uncertainty > u.value + u.uncertainty
 }
 
+// f <= u
 func (f *FloatU) LtE(u *FloatU) bool {
-
+    return f.value - f.uncertainty <= u.value + u.uncertainty
 }
 
+// f >= u
 func (f *FloatU) GtE(u *FloatU) bool {
-
+    return f.value + f.uncertainty >= u.value - u.uncertainty
 }
 
 // Compare f to a Scalar within the limmits of uncertainty
+
+// f == u
 func (f *FloatU) EqlS(u float64) bool {
-
+    if (f.value + f.uncertainty) >= u &&
+       (f.value - f.uncertainty) <= u {
+       return true
+    } else {
+        return false
+    }
 }
 
+// f > u
 func (f *FloatU) GtS(u float64) bool {
-
+    return f.value - f.uncertainty > u
 }
 
+// f < u
 func (f *FloatU) LtS(u float64) bool {
-
+    return f.value + f.uncertainty < u
 }
 
+// f >= u
 func (f *FloatU) GtES(u float64) bool {
-
+    return f.value + f.uncertainty >= u
 }
 
+// f <= u
 func (f *FloatU) LtES(u float64) bool {
-
+    return f.value - f.uncertainty <= u
 }
 
 // Round value to i sigFig
-func (f FloatU)roundSigFig(i) float64{
-
+func (f FloatU)roundSigFig(i float64) {
+    
 }
