@@ -21,6 +21,7 @@ Check the [wiki](https://github.com/zpiman/precise/wiki/Doc)!
 * create an interface
 * add average function (sigFig will increase)
 * add other statistics functions
+* add a way of comparing numbers (with regards to uncertainty)
 * **Any other ideas???** 
 
 ###Contribution
