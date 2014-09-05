@@ -16,12 +16,12 @@ Check the [wiki](https://github.com/zpiman/precise/wiki/Doc)!
   * Add tests
 
 ###Todo
-* add scalar operations
 * add number convertors
 * create an interface
 * add average function (sigFig will increase)
 * add other statistics functions
-* add a way of comparing numbers (with regards to uncertainty)
+* ~~add a way of comparing numbers (with regards to uncertainty)~~
+* ~~add scalar operations~~
 * **Any other ideas???** 
 
 ###Contribution
