@@ -1,6 +1,7 @@
 precise
 =======
-[![Build Status](https://travis-ci.org/zpiman/precise.svg?branch=master)](https://travis-ci.org/zpiman/precise)
+
+  [![Build Status][travis-image]][travis-url]
 
 small go library for working with uncertainty arithmetic
 
@@ -28,3 +29,6 @@ Check the [wiki](https://github.com/zpiman/precise/wiki/Doc)!
 ###Contribution
 
 * [Jakub Mandula](https://github.com/zpiman/)
+
+[travis-image]: https://img.shields.io/travis/zpiman/precise.svg?style=flat
+[travis-url]: https://travis-ci.org/zpiman/precise
