@@ -1,5 +1,6 @@
 precise
 =======
+[![Build Status](https://travis-ci.org/zpiman/precise.svg?branch=master)](https://travis-ci.org/zpiman/precise)
 
 small go library for working with uncertainty arithmetic
 
