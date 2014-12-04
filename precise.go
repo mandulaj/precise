@@ -4,9 +4,9 @@ package precise
 import "fmt"
 
 /* FloatU struct - a float with uncertainty
- * 
- * Pointers to this structure are used to represent floating point values with uncertainty
- * use NewFloatU(value, uncertainty, sigFig) to create new floating point numbers
+
+  Pointers to this structure are used to represent floating point values with uncertainty
+  use NewFloatU(value, uncertainty, sigFig) to create new floating point numbers
 */
 type FloatU struct {
     value float64
@@ -15,11 +15,11 @@ type FloatU struct {
 }
 
 /* NewFloatU()
- *
- * Used to create new float64 with an uncertainty
- * value float64        - self-explanatory
- * uncertainty float64  - the uncertainty of your value
- * sigFig uint          - number of significant figures
+
+  Used to create new float64 with an uncertainty
+  value float64        - self-explanatory
+  uncertainty float64  - the uncertainty of your value
+  sigFig uint          - number of significant figures
 */
 func NewFloatU(value, uncertainty float64, sigFig uint) (f *FloatU) {
     return &FloatU{value, uncertainty, sigFig}
@@ -35,17 +35,17 @@ func (f *FloatU) Add(u *FloatU)  {
     }
 }
 
-// Subtract u from f
+// Subtract u from f with respect to the significant figures and uncertainty
 func (f *FloatU) Sub(u *FloatU) {
     f.value -= u.value
-    f.uncertainty += u.uncertainty 
+    f.uncertainty += u.uncertainty
 
     if (f.sigFig > u.sigFig) {
         f.sigFig = u.sigFig
     }
 }
 
-// Multiply f times u
+// Multiply f times u with respect to the significant figures and uncertainty
 func (f *FloatU) Mul(u *FloatU) {
     fRelUncertainty := f.Relative() // relative uncertainties add
     fRelUncertainty += u.Relative()
@@ -58,7 +58,7 @@ func (f *FloatU) Mul(u *FloatU) {
     }
 }
 
-// Divide f by u
+// Divide f by u with respect to the significant figures and uncertainty
 func (f *FloatU) Div(u* FloatU) {
     fRelUncertainty := f.Relative()
     fRelUncertainty += u.Relative()
@@ -71,11 +71,11 @@ func (f *FloatU) Div(u* FloatU) {
     }
 }
 
-// Raise f to the power of p
+// Raise f to the power of p with respect to the significant figures and uncertainty
 func (f *FloatU)Pow(p int) {
     temp := new(FloatU)
     *temp = *f
-    
+
     if p == 0 {
         f.value = 1.0
         return
@@ -106,14 +106,14 @@ func (f FloatU) String() string {
     return fmt.Sprintf(format, f.value, f.uncertainty)
 }
 
-// What is the relative uncertainty of f
+// Return the relative uncertainty of f
 func (f FloatU) Relative() float64 {
     return f.uncertainty/f.value
 }
 
-// Compare f to u within the limmits of both uncertainties 
 
-// f == u
+
+// Test f == u within the limits of both uncertainties
 func (f *FloatU) Eql(u *FloatU) bool {
     if  (f.value + f.uncertainty) >= (u.value - u.uncertainty) &&
         (f.value - f.uncertainty) <= (u.value + u.uncertainty) {
@@ -123,29 +123,28 @@ func (f *FloatU) Eql(u *FloatU) bool {
     }
 }
 
-// f < u
+// Test f < u within the limits of both uncertainties
 func (f *FloatU) Lt(u *FloatU) bool {
     return f.value + f.uncertainty < u.value - u.uncertainty
 }
 
-// f > u
+// Test f > u within the limits of both uncertainties
 func (f *FloatU) Gt(u *FloatU) bool {
     return f.value - f.uncertainty > u.value + u.uncertainty
 }
 
-// f <= u
+// Test f <= u within the limits of both uncertainties
 func (f *FloatU) LtE(u *FloatU) bool {
     return f.value - f.uncertainty <= u.value + u.uncertainty
 }
 
-// f >= u
+// Test f >= u within the limits of both uncertainties
 func (f *FloatU) GtE(u *FloatU) bool {
     return f.value + f.uncertainty >= u.value - u.uncertainty
 }
 
-// Compare f to a Scalar within the limmits of uncertainty
 
-// f == u
+// Test f == Scalar within the limits of uncertainty
 func (f *FloatU) EqlS(u float64) bool {
     if (f.value + f.uncertainty) >= u &&
        (f.value - f.uncertainty) <= u {
@@ -155,27 +154,27 @@ func (f *FloatU) EqlS(u float64) bool {
     }
 }
 
-// f > u
+// Test f > Scalar within the limits of uncertainty
 func (f *FloatU) GtS(u float64) bool {
     return f.value - f.uncertainty > u
 }
 
-// f < u
+// Test f < Scalar within the limits of uncertainty
 func (f *FloatU) LtS(u float64) bool {
     return f.value + f.uncertainty < u
 }
 
-// f >= u
+// Test f >= Scalar within the limits of uncertainty
 func (f *FloatU) GtES(u float64) bool {
     return f.value + f.uncertainty >= u
 }
 
-// f <= u
+// Test f <= Scalar within the limits of uncertainty
 func (f *FloatU) LtES(u float64) bool {
     return f.value - f.uncertainty <= u
 }
 
 // Round value to i sigFig
 func (f FloatU)roundSigFig(i float64) {
-    
+
 }
