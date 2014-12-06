@@ -2,7 +2,7 @@ precise
 =======
 
   [![Build Status][travis-image]][travis-url]
-  [![GoDoc](godoc-image)](godoc-url)
+  [![GoDoc][godoc-image]][godoc-url]
 
 small go library for working with uncertainty arithmetic
 
