@@ -2,6 +2,7 @@ precise
 =======
 
   [![Build Status][travis-image]][travis-url]
+  [![GoDoc](godoc-image)](godoc-url)
 
 small go library for working with uncertainty arithmetic
 
@@ -24,11 +25,13 @@ Check the [wiki](https://github.com/zpiman/precise/wiki/Doc)!
 * add other statistics functions
 * ~~add a way of comparing numbers (with regards to uncertainty)~~
 * ~~add scalar operations~~
-* **Any other ideas???** 
+* **Any other ideas???**
 
 ###Contribution
 
 * [Jakub Mandula](https://github.com/zpiman/)
 
-[travis-image]: https://img.shields.io/travis/zpiman/precise.svg?style=flat
+[travis-image]: https://img.shields.io/travis/zpiman/precise.svg
 [travis-url]: https://travis-ci.org/zpiman/precise
+[godoc-image]: https://godoc.org/github.com/zpiman/precise?status.svg
+[godoc-url]: https://godoc.org/github.com/zpiman/precise
